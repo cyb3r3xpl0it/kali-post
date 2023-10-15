@@ -1,0 +1,27 @@
+echo "aquatone"
+echo "fastTCPScan"
+echo "docker mobsf"
+echo "whichos"
+echo "apktool"
+echo "ngrok"
+echo "firefox extensions"
+echo "burpsuite pro burpbounty"
+echo "jruby jython"
+echo "angry ip scanner"
+echo "bat lsd fd rustscan"
+echo "bookmarks"
+echo "acunetix"
+echo "nessus"
+echo "wordlists kaoshi"
+echo "nerdfonts"
+echo "powerlevel10k"
+echo "fzf"
+echo "ohmytmux"
+echo "sudo dpkg --add-architecture i386 && sudo apt update && sudo apt -y install wine32"
+echo "/usr/share/veil/config/setup.sh --force --silent"
+echo 'httpie'
+
+ https://bootstrap.pypa.io/pip/2.7/get-pip.py 
+
+ # Fix the Java Problem
+export _JAVA_AWT_WM_NONREPARENTING=1
