@@ -23,5 +23,3 @@ echo 'httpie'
 
  https://bootstrap.pypa.io/pip/2.7/get-pip.py 
 
- # Fix the Java Problem
-export _JAVA_AWT_WM_NONREPARENTING=1
