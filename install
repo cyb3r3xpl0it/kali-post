@@ -1,0 +1,104 @@
+#!/bin/bash
+
+recon=/opt/recon
+exploting=/opt/exploting
+wordlists=/usr/share/wordlists
+AD=/opt/AD
+apis=/opt/apis
+
+sudo chown -R $USER:$USER /opt
+
+mkdir -v $recon $exploting $AD $apis
+
+#go tools
+go install -v github.com/ipinfo/cli/ipinfo@latest
+go install -v github.com/tomnomnom/qsreplace@latest
+go install -v github.com/tomnomnom/unfurl@latest
+go install -v github.com/tomnomnom/assetfinder@latest
+go install -v github.com/tomnomnom/httprobe@latest
+go install -v github.com/tomnomnom/waybackurls@latest
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+go install -v github.com/lukasikic/subzy@latest
+go install -v github.com/dwisiswant0/cf-check@latest
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+go install -v github.com/tomnomnom/hacks/filter-resolved@latest
+go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+go install -v github.com/haccer/subjack@latest
+go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+go install -v github.com/tomnomnom/blocksort@latest
+go install -v github.com/tomnomnom/fff@latest
+go install -v github.com/tomnomnom/dnsgrep@latest
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+
+#RECON
+git clone -v -4 https://github.com/nahamsec/JSParser.git $recon/JSParser
+git clone -v -4 https://github.com/maurosoria/dirsearch.git $recon/dirsearch
+git clone -v -4 https://github.com/nahamsec/lazys3.git $recon/lazys3
+git clone -v -4 https://github.com/tomdev/teh_s3_bucketeers.git $recon/teh_s3_bucketeers
+git clone -v -4 https://github.com/jobertabma/virtual-host-discovery.git $recon/virtual-host-discovery
+git clone -v -4 https://github.com/nahamsec/lazyrecon.git $recon/lazyrecon
+git clone -v -4 https://github.com/blechschmidt/massdns.git $recon/massdns
+git clone -v -4 https://github.com/yassineaboukir/asnlookup.git $recon/asnlookup
+git clone -v -4 https://github.com/nahamsec/crtndstry.git $recon/crtndstry
+git clone -v -4 https://github.com/nahamsec/bbht.git $recon/bbht
+git clone -v -4 https://github.com/guelfoweb/knock.git $recon/knock-dns
+git clone -v -4 https://github.com/carlospolop/legion.git $recon/legion
+git clone -v -4 https://github.com/SecHackLabs/webhackshl.git $recon/webhackshl
+git clone -v -4 https://github.com/aboul3la/Sublist3r.git $recon/Sublist3r
+git clone -v -4 https://github.com/antichown/subdomain-takeover.git $recon/subdomain-takeover
+git clone -v -4 https://github.com/devanshbatham/ParamSpider.git $recon/ParamSpider
+git clone -v -4 https://github.com/Edd13Mora/Subdominator $recon/Subdominator
+git clone -v -4 https://github.com/knownsec/ksubdomain $recon/ksubdomain
+git clone -v -4 https://github.com/a0rtega/pafish $recon/pafish
+git clone -v -4 https://github.com/elceef/dnstwist $recon/dnstwist
+git clone -v -4 https://github.com/americo/sqlifinder $recon/sqlifinder
+
+#Exploting
+git clone -v -4 https://github.com/codingo/NoSQLMap.git $exploting/NoSQLMap
+git clone -v -4 https://github.com/iphelix/pack.git $exploting/Cracking-Pack-Toolkit
+git clone -v -4 https://github.com/elceef/dnstwist.git $exploting/dnstwist
+git clone -v -4 https://github.com/M4sc3r4n0/Evil-Droid.git $exploting/Evil-Droid
+git clone -v -4 https://github.com/s0md3v/Hash-Buster.git $exploting/Hash-Buster
+git clone -v -4 https://github.com/hashcat/hashcat-utils.git $exploting/Hashcat-Utils
+git clone -v -4 https://github.com/magnumripper/JohnTheRipper.git $exploting/JohnTheRipper
+git clone -v -4 https://github.com/AlessandroZ/LaZagne.git $exploting/laZagne
+git clone -v -4 https://github.com/AlessandroZ/LaZagneForensic.git $exploting/laZagneForensic
+git clone -v -4 https://github.com/ZettaHack/PasteZort.git $exploting/PasteZort
+git clone -v -4 https://github.com/carlospolop/PEASS-ng.git $exploting/PEASS-ng
+git clone -v -4 https://github.com/Screetsec/TheFatRat.git $exploting/TheFatRat
+git clone -v -4 https://github.com/HackingEnVivo/WaterDoS.git $exploting/WaterDoS
+git clone -v -4 https://github.com/WhiteWinterWolf/wwwolf-php-webshell.git $exploting/wwwolf-php-webshell
+git clone -v -4 https://github.com/GinjaChris/pentmenu.git $exploting/pentmenu
+wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh -O $exploting/PEASS-ng/linpeas.sh
+git clone -v -4 https://github.com/danialhalo/SqliSniper.git $exploting/SqliSniper
+
+#AD
+git clone -v -4 https://github.com/dirkjanm/mitm6.git $AD/mitm6
+git clone -v -4 https://github.com/GhostPack/Rubeus.git $AD/Rubeus
+git clone -v -4 https://github.com/r3motecontrol/Ghostpack-CompiledBinaries.git $AD/Ghostpack-CompiledBinaries
+git clone -v -4 https://github.com/SpiderLabs/Responder.git $AD/Responder-old
+git clone -v -4 https://github.com/lgandx/Responder.git $AD/Responder
+git clone -v -4 https://github.com/samratashok/nishang.git $AD/nishang
+git clone -v -4 https://github.com/fortra/impacket.git $AD/impacket
+git clone -v -4 https://github.com/ParrotSec/mimikatz.git $AD/mimikatz
+git clone -v -4 https://github.com/GhostPack/Certify.git $AD/Certify
+git clone -v -4 https://github.com/s4vitar/rpcenum.git $AD/rpcenum
+git clone -v -4 https://github.com/Hackplayers/Salsa-tools.git $AD/Salsa-tools
+wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatz_trunk.zip -O $AD/mimikatz/mimikatz_trunk.zip
+
+#Wordlists
+sudo wget https://gist.githubusercontent.com/jhaddix/86a06c5dc309d08580a018c66354a056/raw/96f4e51d96b2203f19f6381c8c545b278eaa0837/all.txt -O $wordlists/all.txt
+sudo git clone -4 -v https://github.com/danielmiessler/SecLists.git $wordlists/seclists
+sudo git clone -4 -v https://github.com/fuzzdb-project/fuzzdb.git $wordlists/fuzzdb
+sudo git clone -4 -v https://github.com/swisskyrepo/PayloadsAllTheThings.git $wordlists/PayloadsAllTheThings
+sudo git clone -4 -v https://github.com/Bo0oM/fuzz.txt.git $wordlists/fuzz
+sudo git clone -4 -v https://github.com/duyet/bruteforce-database.git $wordlists/bruteforce-database 
+sudo git clone -4 -v https://github.com/berzerk0/Probable-Wordlists.git $wordlists/Probable-Wordlists
+sudo git clone -4 -v https://github.com/Cryilllic/Active-Directory-Wordlists.git $wordlists/Active-Directory-Wordlists
+sudo git clone -4 -v https://github.com/Karanxa/Bug-Bounty-Wordlists.git $wordlists/Bug-Bounty-Wordlists
+sudo git clone -4 -v https://github.com/fuzzdb-project/fuzzdb.git $wordlists/fuzzdb
+sudo git clone -4 -v https://github.com/kaimi-io/web-fuzz-wordlists.git $wordlists/web-fuzz-wordlists
+sudo git clone -4 -v https://github.com/p0dalirius/webapp-wordlists.git $wordlists/webapp-wordlists
+sudo git clone -4 -v https://github.com/kkrypt0nn/wordlists.git $wordlists/wordlists
+sudo git clone -4 -v https://github.com/xajkep/wordlists.git $wordlists/wordlists-1
+sudo git clone -4 -v https://github.com/orwagodfather/WordList.git $wordlists/WordList
