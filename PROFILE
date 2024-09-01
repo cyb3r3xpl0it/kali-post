@@ -14,7 +14,8 @@ alias ls='lsd --group-dirs=first'
 alias cat='bat --paging=never'
 alias catn='/bin/cat'
 alias catnl='bat'
-alias burpsuite='/usr/lib/jvm/java-17-openjdk-amd64/bin/java --add-opens=java.desktop/javax.swing=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED --add-opens=java.base/jdk.internal.org.objectweb.asm.Opcodes=ALL-UNNAMED -javaagent:/opt/burpsuite/BurpLoaderKeygen.jar -noverify -jar /opt/burpsuite/burpsuite_pro_v2023.10.1.2.jar'
+alias cme='crackmapexec'
+alias burpsuite=''
 
 # Plugins
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

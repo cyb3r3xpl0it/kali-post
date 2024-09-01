@@ -1,16 +1,24 @@
 #!/bin/bash
 
+labs=/opt/labs
 recon=/opt/recon
 exploting=/opt/exploting
 wordlists=/usr/share/wordlists
 AD=/opt/AD
 apis=/opt/apis
+wlopt=/opt/wordlists
 
-sudo chown -R $USER:$USER /opt
+sudo chown -R cyb3r3xpl0it:cyb3r3xpl0it /opt
 
-mkdir -v $recon $exploting $AD $apis
+mkdir -v $labs $recon $exploting $wordlists $AD $apis $wlopt
 
-#go tools
+sudo apt-get install -y gnome-terminal terminator htop neofetch ranger proxychains tor bloodhound neo4j xclip scrub feroxbuster alacarte cupp
+
+cargo install --locked bat
+cargo install --locked lsd
+cargo install --locked fd-find
+
+#GO Tools
 go install -v github.com/ipinfo/cli/ipinfo@latest
 go install -v github.com/tomnomnom/qsreplace@latest
 go install -v github.com/tomnomnom/unfurl@latest
@@ -30,6 +38,24 @@ go install -v github.com/tomnomnom/fff@latest
 go install -v github.com/tomnomnom/dnsgrep@latest
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 
+#apis
+git clone -v -4 https://github.com/s0md3v/Arjun.git $apis/Arjun
+git clone -v -4 https://github.com/ticarpi/jwt_tool.git $apis/jwt_tool
+git clone -v -4 https://github.com/assetnote/kiterunner.git $apis/kiterunner
+git clone -v -4 https://github.com/trufflesecurity/trufflehog.git $apis/trufflehog
+git clone -v -4 https://github.com/alufers/mitmproxy2swagger.git $apis/mitmproxy2swagger
+
+#LABS
+git clone -v -4 https://github.com/snoopysecurity/dvws-node.git $labs/dvws-node
+git clone -v -4 https://github.com/DevSlop/Pixi.git $labs/Pixi
+git clone -v -4 https://github.com/juice-shop/juice-shop.git $labs/juice-shop
+git clone -v -4 https://github.com/optiv/rest-api-goat.git $labs/rest-api-goat
+git clone -v -4 https://github.com/erev0s/VAmPI.git $labs/VAmPI
+git clone -v -4 https://github.com/Erdemstar/VulnerableApp4APISecurity.git $labs/VulnerableApp4APISecurity
+git clone -v -4 https://github.com/marmicode/websheep.git $labs/websheep
+git clone -v -4 https://github.com/OWASP/crAPI.git $labs/crAPI
+git clone -v -4 https://github.com/roottusk/vapi.git $labs/vapi
+
 #RECON
 git clone -v -4 https://github.com/nahamsec/JSParser.git $recon/JSParser
 git clone -v -4 https://github.com/maurosoria/dirsearch.git $recon/dirsearch
@@ -47,11 +73,17 @@ git clone -v -4 https://github.com/SecHackLabs/webhackshl.git $recon/webhackshl
 git clone -v -4 https://github.com/aboul3la/Sublist3r.git $recon/Sublist3r
 git clone -v -4 https://github.com/antichown/subdomain-takeover.git $recon/subdomain-takeover
 git clone -v -4 https://github.com/devanshbatham/ParamSpider.git $recon/ParamSpider
-git clone -v -4 https://github.com/Edd13Mora/Subdominator $recon/Subdominator
 git clone -v -4 https://github.com/knownsec/ksubdomain $recon/ksubdomain
 git clone -v -4 https://github.com/a0rtega/pafish $recon/pafish
 git clone -v -4 https://github.com/elceef/dnstwist $recon/dnstwist
 git clone -v -4 https://github.com/americo/sqlifinder $recon/sqlifinder
+git clone -v -4 https://github.com/RustScan/RustScan.git $recon/rustscan
+git clone -v -4 https://github.com/RevoltSecurities/Subdominator.git $recon/Subdominator
+
+#Wordlists
+git clone -v -4 https://github.com/urbanadventurer/username-anarchy.git $wlopt/username-anarchy
+git clone -v -4 https://github.com/digininja/RSMangler.git $wlopt/RSMangler
+git clone -v -4 https://github.com/sc0tfree/mentalist.git $wlopt/mentalist
 
 #Exploting
 git clone -v -4 https://github.com/codingo/NoSQLMap.git $exploting/NoSQLMap
