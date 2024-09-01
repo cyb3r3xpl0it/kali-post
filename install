@@ -134,3 +134,6 @@ sudo git clone -4 -v https://github.com/p0dalirius/webapp-wordlists.git $wordlis
 sudo git clone -4 -v https://github.com/kkrypt0nn/wordlists.git $wordlists/wordlists
 sudo git clone -4 -v https://github.com/xajkep/wordlists.git $wordlists/wordlists-1
 sudo git clone -4 -v https://github.com/orwagodfather/WordList.git $wordlists/WordList
+
+mkdir -v ~/Documents/Notes
+git clone -v -4 https://github.com/0xDigimon/PenetrationTesting_Notes-.git ~/Documents/Notes/PenetrationTesting_Notes
