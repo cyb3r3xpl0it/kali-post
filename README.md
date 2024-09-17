@@ -28,3 +28,5 @@ fist yo have to install
 - acunetix
 - nessus
 - wordlists koashi
+- netexec
+- bloodhound pythonXS

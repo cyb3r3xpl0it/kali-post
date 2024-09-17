@@ -3,7 +3,7 @@ export GOROOT=/opt/go
 export GOPATH=$HOME/go
 
 #Manual PATH
-PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+PATH=$GOROOT/bin:$GOPATH/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
 #Manual Alias
 alias ll='lsd -lh --group-dirs=first'
