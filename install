@@ -9,13 +9,10 @@ apis=/opt/apis
 wlopt=/opt/wordlists
 notes=~/Documents/Notes
 
-sudo chown -R cyb3r3xpl0it:cyb3r3xpl0it /opt
-
 mkdir -v $labs $recon $exploting $wordlists $AD $apis $wlopt
 
-sudo apt-get install -y gnome-terminal terminator htop neofetch ranger proxychains tor bloodhound neo4j xclip scrub feroxbuster alacarte cupp pipx
 pipx ensurepath
-pipx install git+https://github.com/Pennyw0rth/NetExec
+#pipx install git+https://github.com/Pennyw0rth/NetExec
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -86,6 +83,8 @@ git clone -v -4 https://github.com/RustScan/RustScan.git $recon/rustscan
 git clone -v -4 https://github.com/RevoltSecurities/Subdominator.git $recon/Subdominator
 git clone -v -4 https://github.com/lauritzh/domscan.git $recon/domscan
 git clone -v -4 https://github.com/s0md3v/XSStrike.git $recon/XSStrike
+git clone -v -4 https://github.com/hackertarget/nmap-did-what.git $recon/nmap-did-what
+git clone -v -4 https://github.com/attacksurge/ax.git $recon/ax
 
 #Wordlists
 git clone -v -4 https://github.com/urbanadventurer/username-anarchy.git $wlopt/username-anarchy
@@ -110,6 +109,7 @@ git clone -v -4 https://github.com/WhiteWinterWolf/wwwolf-php-webshell.git $expl
 git clone -v -4 https://github.com/GinjaChris/pentmenu.git $exploting/pentmenu
 wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh -O $exploting/PEASS-ng/linpeas.sh
 git clone -v -4 https://github.com/danialhalo/SqliSniper.git $exploting/SqliSniper
+git clone -v -4 https://github.com/r0oth3x49/ghauri.git $exploting/ghauri
 
 #AD
 git clone -v -4 https://github.com/dirkjanm/mitm6.git $AD/mitm6
